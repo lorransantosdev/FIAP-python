@@ -60,12 +60,14 @@ def cria_naipe(naipe):
 #as cartas sao 'A' (ás) 2,3,4,5,...,10,'J','Q' e 'K'
 #O J de ouros, por exemplo, é representado pela string 'Jo'. 
 #Assim 'Jo' é um dos elementos que deve aparecer na lista
-def cria_baralho()
+def cria_baralho():
     baralho=[]
+    cartas = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     naipe = ["o", "c", "e", "p"]
-    for i in naipe:
-        baralho.append(criar_naipe(i))
-        baralho
+    for c in cartas:
+        for n in naipe:
+            baralho.append(c+n)
+            baralho
     return baralho
 
 #Faça uma função que recebe uma lista, 
@@ -90,10 +92,10 @@ def acima_da_media(lista):
 # e o produto de preço 4 tem 3 reais de desconto
 # A função deve retornar a lista [2,1]
 def  liquidacao(precos,descontos):
-    precos_finais=[]
+    final = []
     for i,l in zip(precos,descontos):
-        precos_finais.apeend(i,l)
-    return precos_finais
+        final.append(i-l)
+    return final
 
 
 import unittest
